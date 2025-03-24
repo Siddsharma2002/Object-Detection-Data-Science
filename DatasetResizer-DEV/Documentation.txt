@@ -1,0 +1,46 @@
+# DatasetRescaler
+
+### Dependencies 
+
+|Name		|Version	|
+|---------------|---------------|
+|python		|3.8.3		|
+|opencv-python	|4.4.0.44	|
+|---------------|---------------|
+
+### README
+
+To save time for now, this program is not a command line application. Any settings will have to modified in the code itself.
+Towards the end of the file, there is a few variables marked under a "Settings" comment.
+Once settings are specified, simply run this file to resize data.
+
+### CAUTION
+Use this application on a copy of the dataset in case any unforeseen issues occur.
+
+### SETTINGS
+
+dir - The target directory. The application will find all "Annotations" and "frame" directory combinations within this directory. Therefore, 
+      this can be set to any level within the file system. Be careful with this, as any eligible files with be permanently affected within the directory.
+
+target_width - The target width to resize to, this can be less than or greater than the current size.
+
+target_height - The target height to resize to, this can be less than or greater than the current size.
+
+display_visual - If this boolean value is set to true, the application will display an brief example of each resized image with its resized bounding box.
+	         This operation will greatly slow down dataset rescaling, so use only if needed.
+
+visual_display_length - This value will set how long visuals are displayed. This value is in milliseconds (1000 = 1 second).
+			Keep in mind this application is not multithreaded, and the program will be stuck on this display step for as long
+			as the visual is displayed.
+
+### NOTES
+
+This script was set-up to be potentially integrated into our other existing command_line tool.
+
+### TO DO
+
+Change to command-line tool.
+Integrate this tool with other tool.
+Add more file-validation before permanently modifying data.
+Add warning about all applicable files in current directory will be affected, make user input button to continue.
+
