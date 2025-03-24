@@ -1,0 +1,44 @@
+# VideoByFrames
+
+VideoByFrames is a simple video editing tool that outputs a videos frames for a given time interval.
+By default, the tool outputs the video that matches these frames as well.
+	
+### Dependencies
+
+|Name		|Version  	|
+|---------------|---------------|
+|python 	|3.8.3	  	|
+|opencv-python 	|4.4.0.44 	|
+|ffmpeg-python	|0.2.0		|
+|pathvalidate	|2.3.0		|
+|---------------|---------------|
+
+### Notes
+
+Output location is stored as a setting for ease of use. The settings file will be created after using the tool for the first time.
+The settings can be either modified manually in the settings.json file, or they can be modified while using the tool with the -c command.
+
+### Example Calls on Anaconda Prompt
+
+# Trim video to the interval 3 seconds to 62 seconds
+python VideoByFrames.py -i C:\files\images\video.mp4 -s 3 -e 0:01:02
+
+#Trim the video to the interval 500 milliseconds to 10 seconds
+python VideoByFrames.py -i C:\files\images\video.mp4 -s .5 -e 10
+
+# Change settings before outputting frame/video result
+python VideoByFrames.py -i C:\files\images\video.mp4 -s 3 -e 10 -c
+
+# View the help menu
+python VideoByFrames.py -h
+
+### Research Link
+
+Put some sort of link to the research project here and a better description of the tools role in the project.
+This tool was created because of a need to automate video preparation before using another tool for annotation.
+
+### To Do
+
+Allow -c (Change settings) to be called stand-alone
+potentially remove ffmpeg-python dependency
+Clean up help display
